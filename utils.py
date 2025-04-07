@@ -68,8 +68,8 @@ class CacheManager:
             print(f"---ERROR: {key} NOT FOUND OR NOT A LIST---")
             return False
         # FUNCTION TO LOAD PROMPTS
-    def load_prompts(path: Path) -> dict:
-        print(f"---LOADING PROMPTS FROM {path}---")
-        with open(path, 'r') as file:
-            prompts = yaml.safe_load(file)
-        return prompts
+def load_prompts(path: Path) -> dict:
+    print(f"---LOADING PROMPTS FROM {path}---")
+    with open(path, 'r') as file:
+        prompts = yaml.safe_load(file)
+    return prompts

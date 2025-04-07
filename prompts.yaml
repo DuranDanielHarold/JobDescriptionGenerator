@@ -7,15 +7,19 @@ jd_writer_prompt: |
       - Recruitment Type: {recruitment_type}
       - Job duties: {job_duties}
       - Required qualifications: {job_qualification}
+      - Job Expiration Date: {expiry_date}
+      - Job Location: {job_location}
 
       Avoid using introductory phrases or questions.
 
       Follow this format for the job description:
       "Job Title: {{Position}}
       Job Type: {{Recruitment Type}}
-      Job Location: {{City}}
+      Job Location: {{Job Location}}
       Department: {{Department}}
       Expected Start Date: {{Expected Start Date}}
+      Job Expiration Date: {{Job Expiration Date}}
+
 
       Duties and Responsibilities:
       {{Job Duties}}
