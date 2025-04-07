@@ -135,7 +135,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-
+JobJigsawPrototypeCode/venv/
 # Spyder project settings
 .spyderproject
 .spyproject

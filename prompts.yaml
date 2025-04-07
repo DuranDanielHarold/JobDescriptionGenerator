@@ -1,0 +1,24 @@
+# PROMPT FOR THE JOB DESCRIPTION WRITER AGENT
+jd_writer_prompt: |
+  As an HR professional in a tech company, please draft a job description for this position {job_title}, incorporating the provided information:
+      - Position: {job_title}
+      - Expected Start Date: {expected_start_date}
+      - Department: {department}
+      - Recruitment Type: {recruitment_type}
+      - Job duties: {job_duties}
+      - Required qualifications: {job_qualification}
+
+      Avoid using introductory phrases or questions.
+
+      Follow this format for the job description:
+      "Job Title: {{Position}}
+      Job Type: {{Recruitment Type}}
+      Job Location: {{City}}
+      Department: {{Department}}
+      Expected Start Date: {{Expected Start Date}}
+
+      Duties and Responsibilities:
+      {{Job Duties}}
+
+      Qualifications:
+      {{Required Qualifications}}"
