@@ -1,7 +1,7 @@
 #llm dict state
 
 from pydantic import BaseModel
-from typing import TypedDict, Annotated
+from typing import TypedDict, Annotated, List, Dict, Any, AnyStr, Optional
 
     #   - Position: {job_title}
     #   - Expected Start Date: {expected_start_date}
@@ -30,13 +30,19 @@ class JobDataModel(BaseModel):
 
     
 class JobDescriptionGraphState(TypedDict):
-    job_title: str
-    job_type: str
-    department: str
-    expiry_date: str
-    job_duties: str
-    job_qualification: str
-    expected_start_date: str
-    job_description: JobDataModel
-    job_location: str
+    job_openings: List[Dict[AnyStr, Any]]
+    job_descriptions: List[JobDataModel]
+
+class JDWRequest(BaseModel):
+    job_openings: List[Dict[AnyStr, Any]]
+
+class StartResponse(BaseModel):
+    trace_id: str
+    message: str
+
+class StatusResponse(BaseModel):
+    trace_id: str
+    status: str
+    progress: Optional[Dict[str, str]] = None
+    results: Optional[Dict[str, Any]] = None
 

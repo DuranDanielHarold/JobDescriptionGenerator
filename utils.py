@@ -67,9 +67,25 @@ class CacheManager:
         else:
             print(f"---ERROR: {key} NOT FOUND OR NOT A LIST---")
             return False
-        # FUNCTION TO LOAD PROMPTS
+
+# FUNCTION TO LOAD PROMPTS
 def load_prompts(path: Path) -> dict:
     print(f"---LOADING PROMPTS FROM {path}---")
     with open(path, 'r') as file:
         prompts = yaml.safe_load(file)
     return prompts
+
+def process_directory(directory_path):
+    results = []
+
+    # Process TXT files for job descriptions
+    for file in os.listdir(directory_path):
+        if file.endswith(".txt"):
+            file_path = os.path.join(directory_path, file)
+            with open(file_path, "r") as f:
+                content = f.read()
+                results.append({
+                    "name": file,
+                    "content": content
+                })
+    return results

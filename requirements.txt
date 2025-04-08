@@ -9,3 +9,9 @@ langchain-community>= 0.3.19
 langchain-core>= 0.3.49
 langchain-openai>= 0.3.10
 python-dotenv>= 1.1.0
+fastapi[standard]
+python-jose[cryptography]
+uvicorn[standard]
+passlib[bcrypt]
+slowapi
+requests>=2.31.0
