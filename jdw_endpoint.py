@@ -25,6 +25,7 @@ from typing_extensions import Callable, Dict, List, AnyStr, Any
 from dotenv import load_dotenv
 import logging
 
+
 # LOAD ENVIRONMENT VARIABLES 
 load_dotenv()
 
@@ -46,10 +47,10 @@ def create_langgraph_app():
     # Import your actual LangGraph application components here
     # This is placeholder code - replace with actual imports for your app
     try:
-        from graph import create_multi_job_comparison_graph
+        from graph import graphbuilder
         
         # Create and return the graph
-        return create_multi_job_comparison_graph()
+        return graphbuilder()
     except ImportError:
         # For development/testing, return a placeholder
         print("WARNING: Using mock LangGraph application!")

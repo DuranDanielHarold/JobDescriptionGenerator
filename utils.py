@@ -75,6 +75,21 @@ def load_prompts(path: Path) -> dict:
         prompts = yaml.safe_load(file)
     return prompts
 
+# FUNCTION TO LOAD INDIVIDUAL FILES
+def process_txt(txt_file):
+    try:
+        job_description_content = txt_file.getvalue().decode("utf-8")
+        job_descriptions = [{
+            "name": txt_file.name,
+            "content": job_description_content
+        }]
+        print(f"Job description uploaded: {txt_file.name}")
+
+        return job_descriptions
+    except Exception as e:
+        raise RuntimeError(f"Error reading job description file: {str(e)}")
+
+# FUNCTION LOAD AN ENTIRE DIRECTORY
 def process_directory(directory_path):
     results = []
 
@@ -88,4 +103,5 @@ def process_directory(directory_path):
                     "name": file,
                     "content": content
                 })
+
     return results
